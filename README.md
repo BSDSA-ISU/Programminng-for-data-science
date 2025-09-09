@@ -2,7 +2,7 @@
 
 ## Table of contents
 
-- [Intoducton](#about-the-course)
+- [Introduction](#about-the-course)
 - [Topics](#about-the-course)
 - [Why?](#why-lol)
 
@@ -15,7 +15,7 @@
 ### why? Lol
 
 - IKR? we all barely learn python and java on first **year(ESpecially during prog 1 and 2)** and yet they forcing another one on our mind
-- what it cost? More stress more hedache and more risk of suicides
+- what it cost? More stress more headache and more risk of suicides
 
 ### me while writing this markdown
 
