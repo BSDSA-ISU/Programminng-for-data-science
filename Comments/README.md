@@ -5,8 +5,8 @@
 - Comments = notes written inside code
 - Python ignores comment during execution\
 - Purpose
-  - Explain code for humand
-  - MAke deebugging easier
+  - Explain code for human.
+  - MAke debugging easier
 
 ## Why use comments?
 
@@ -45,12 +45,12 @@ here too
 - Use multi-line for detailed explanations or documentation.
 - Example: Describing a function's purpose
 
-## Best practices for comemnts
+## Best practices for comments
 
 - Be clear and concise
 - Explain **why**, not just what
 - Update comments when code changes.
-- Avoid redundat or obvious comemnts.
+- Avoid redundant or obvious comments.
 
 ## Good vs bad comments
 
@@ -80,7 +80,7 @@ x = x + 1
 - Writing comments that repeat the code.
 - Leaving outdated comments.
 - Using too many unnecessary comments.
-- Not commenting compex logic.
+- Not commenting complex logic.
 
 ## Summary
 
