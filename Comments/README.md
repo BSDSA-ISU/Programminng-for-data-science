@@ -1,4 +1,4 @@
-# comments
+# Introduction to comments
 
 ## What are comments?
 
@@ -28,7 +28,7 @@ print("Hello world")
 
 ## Multi line comments
 
-- pythin doesn't have official multi-line comments.
+- python doesn't have official multi-line comments.
 - Conversion: use triple quotes (""" """ or ''' ''')
 - Example
 
