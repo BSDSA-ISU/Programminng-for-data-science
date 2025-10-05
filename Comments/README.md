@@ -6,7 +6,7 @@
 - Python ignores comment during execution\
 - Purpose
   - Explain code for human.
-  - MAke debugging easier
+  - Make debugging easier
 
 ## Why use comments?
 
