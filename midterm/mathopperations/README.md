@@ -4,6 +4,15 @@
 - they allow python to funcion like a powerful calculator
 - Calculating total price to determine the average of a set of numbers, they are fundamental
 
+## some other operations that is common on python
+
+| operation | function |
+|-----------|----------|
+|    +      | addition |
+|    -      | substraction |
+|    *      | Multiplication |
+|    /      | Division |
+
 ## two types of division
 
 1. **Floathing-point division (/)**
