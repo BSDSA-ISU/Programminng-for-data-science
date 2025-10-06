@@ -18,7 +18,7 @@ code example:
 
 ```python
 print(10 / 3) # 3.3333333__
-print(10 // 3) 3 3
+print(10 // 3) # 3 3
 ```
 
 ## Power and in-place Operations
@@ -74,7 +74,11 @@ result = 10 + 3 * 2 ** 2
 Code example 2:
 
 ```python
-\
+result = (9 - 2) ** 4 * 4 + 1
+# step 1: (9 - 2)
+# step 2: (9 - 2) ** 4
+# step 3: 4 * 4 
+# step 4: 4 + 1
 ```
 
 ## real world example
@@ -99,7 +103,7 @@ print(f"{total_seconds} seconds is {minutes} minutes and {seconds} seconds")
 - know the difference between / and // (integer division).
 - operator precedence (**PEMDAS**) dictates the order of calculations.
 - use parentheses **()** to clarify complex rxpressions and force a specific order.
-- in place operations (*=, += etc...)
+- in place operations ***=, += etc...**
   
 ## practice
 
