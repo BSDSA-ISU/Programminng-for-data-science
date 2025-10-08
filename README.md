@@ -26,5 +26,3 @@
 ### me while writing this markdown
 
 ![Alt text](./head-bang-frustrated-kyouko.gif)
-
-#### Hello sir ben :D
