@@ -16,8 +16,10 @@
 
 ### Topics we try to learn
 
-- [Type Conversion](./Type%20Conversion/README.md)
-- [Comments in Python](./Comments/README.md)
+- [Type Conversion](./prelim/Type%20Conversion/README.md)
+- [Comments in Python](./prelim/Comments/README.md)
+- [Arithmetic operations](./midterm/ArithmeticOperations/README.md)
+- [Logical Operations](./midterm/LogicalOperations/README.md)
 
 ### me while writing this markdown
 
