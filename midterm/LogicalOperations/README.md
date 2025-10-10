@@ -114,7 +114,7 @@ flowchart TD
       F --> |True| RESULT["You are eligible for a discount!"]
       F ----> |False| ELSE["No discount available."]
       D ----> |False| ELSE
-      RESULT --> E["Delete System32"]
+      RESULT --> E["Exit"]
       ELSE --> E
 ```
 
@@ -145,6 +145,26 @@ name = "Alice"
 # If name is not empty OR we try to get a default value
 greeting = name or "Guest"
 print(greeting) # Output: Alice
+```
+
+**Flowchart version:**
+
+```mermaid
+flowchart TD
+    A["Start"] --> List["Initialize list, data = []"]
+    List --> B{"is length of data greater than 0?"}
+    B --> |True| C{"And data[0] == 10?"}
+    C --> |True| D["Found 10"]
+
+    A --> Name["Initialize, name = Alice"]
+    C --> |False| Name
+    B --> |False| Name
+    D --> Name
+
+    Name --> E{"is name empty?"}
+    E --> |True| G["Guest"]
+    E --> |False| F["name"]
+
 ```
 
 ---
