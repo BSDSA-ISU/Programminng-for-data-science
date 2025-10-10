@@ -194,6 +194,33 @@ else:
 # Output: Login successful! Welcome.
 ```
 
+**Flowchart**:
+
+```mermaid
+flowchart TD
+    start[Start] --> A["initialize variable,
+    username = johndoe,
+    password = secret123,
+    is_account_active = True
+    failed_attempts = 1
+    "]
+
+    A --> Input[
+    input_username,
+    input_password]
+
+    Input --> B{"input_username == username"}
+    B --> |True| C{"input_password == password"}
+    
+    C --> |True| D{"is_active"}
+    D --> |True| E{"failed_attempts >= 3"}
+    E --> |False| F["Login Successful!"]
+    C --> |False| G["Login failed. Check credentials, account status, or try again later."]
+    B --> |false| G
+    D --> |False| G
+    E --> |True| G
+```
+
 ---
 
 **for easy understanding Refer to the truth table:**
