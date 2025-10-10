@@ -166,18 +166,18 @@ print(f"Total: ${total:.2f}")
 
 ```mermaid
 flowchart TD
-    subgraph Manual["Computation"]
-        subtotal["subtotal = 12.50 + 5.99 = 18.49"]
-        subtotal --> taxammount["tax_amount = 18.49 * 0.08 = 1.48"]
-        taxammount --> total[19.97]
-    end
-
     start["Program Start"] --> B[
         Assign variables:
         item1_price = 12.50
         item2_price = 5.99
         tax_rate = 0.08
     ]
+
+    subgraph Manual["Computation"]
+        subtotal["subtotal = 12.50 + 5.99 = 18.49"]
+        subtotal --> taxammount["tax_amount = 18.49 * 0.08 = 1.48"]
+        taxammount --> total[19.97]
+    end
 
     start --> Manual
 
