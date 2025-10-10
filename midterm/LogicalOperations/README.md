@@ -101,6 +101,81 @@ else:
 # Output: You are eligible for a discount!
 ```
 
+how it works on flowchart for understanding:
+
+```mermaid
+
+flowchart TD
+    A[start] --> VAR[initialize variable, age = 22, is_student = True, has_coupon = False]
+      VAR --> C{"is_student"}
+      C --> |False| D{"has_coupon"}
+      C --> |True| F{"age >= 18"}
+      D --> |True| F
+      F --> |True| RESULT["You are eligible for a discount!"]
+      F ----> |False| ELSE["No discount available."]
+      D ----> |False| ELSE
+      RESULT --> E["Delete System32"]
+      ELSE --> E
+```
+
+### Short-Circuit Evaluation
+
+- Python is smart! It stops evaluating a logical expression as soon as the final outcome is known.
+- and: If the first condition is False, the result is already False. The second condition is not evaluated.
+- or: If the first condition is True, the result is already True. The second condition is not evaluated.
+
+Why it matters: It can improve performance and prevent errors.
+
+**Code Example:**
+
+```python
+# Example 1: With 'and'
+data = [] # An empty list
+
+# if data is not empty AND the first element is 10
+if len(data) > 0 and data[0] == 10:
+  print("Found 10")
+# This is safe! Because data is empty, the first condition (len(data)>0) is False.
+
+# Python short-circuits and NEVER tries to evaluate data[0], which would cause an IndexError.
+
+# Example 2: With 'or'
+name = "Alice"
+
+# If name is not empty OR we try to get a default value
+greeting = name or "Guest"
+print(greeting) # Output: Alice
+```
+
+---
+
+### Real-World Example: Secure Login
+
+A practical application combining all three operators for a security check.
+
+**Code example**:
+
+```python
+# User credentials and status
+username = "johndoe"
+password = "secret123"
+is_account_active = True
+failed_attempts = 1
+
+# Simulate login logic
+input_username = "johndoe"
+input_password = "secret123"
+
+# Check if login is successful AND account is active AND not too many failed attempts
+if (input_username == username and input_password == password) and is_account_active and not failed_attempts >= 3:
+  print("Login successful! Welcome.")
+else:
+  print("Login failed. Check credentials, account status, or try again later.")
+# Output: Login successful! Welcome.
+```
+
+---
+
 **for easy understanding Refer to the truth table:**
 
 | A | B   | A OR B | A AND B | NOT A | NOT B |
@@ -109,3 +184,12 @@ else:
 | False | True  | True   | False | True | False |
 | True  | False | True   | False | False | True |
 | True  | True  | True   | True  | False | False |
+
+### Summary & Best Practices
+
+- **and:** All conditions must be True.
+- **or:** At least one condition must be True.
+- **not:** Reverses a single Boolean value.
+- Use parentheses () to group conditions and make complex logic clear.
+- Remember short-circuiting! It can make your code faster and safer.
+- When in doubt, refer to the truth tables.
