@@ -2,6 +2,18 @@
 
 > Combining Conditions for Complex Logic
 
+**Table of Contents:**
+
+- [Making Decisions Smarter: Logical Operators in Python](#making-decisions-smarter-logical-operators-in-python)
+  - [The World of True and False](#the-world-of-true-and-false)
+  - [The and Operator: All Must Be True](#the-and-operator-all-must-be-true)
+  - [The or Operator: At Least One Must Be True](#the-or-operator-at-least-one-must-be-true)
+  - [The not Operator: The Reverser](#the-not-operator-the-reverser)
+  - [Building Complex Logic](#building-complex-logic)
+  - [Short-Circuit Evaluation](#short-circuit-evaluation)
+  - [Real-World Example: Secure Login](#real-world-example-secure-login)
+  - [Summary \& Best Practices](#summary--best-practices)
+
 ## The World of True and False
 
 - Computers make decisions based on Boolean logic:
@@ -14,7 +26,7 @@
 Analogy: "I will go to the park if it is sunny
 **AND** I have free time."
 
-### The and Operator: All Must Be True
+## The and Operator: All Must Be True
 
 - Returns True only if both operands (conditions) are True.
 - If any condition is False, the entire expression is False.
@@ -33,7 +45,7 @@ else:
 # Output: You are allowed to drive.
 ```
 
-### The or Operator: At Least One Must Be True
+## The or Operator: At Least One Must Be True
 
 - Returns True if at least one operand (condition) is True.
 - It only returns False if both conditions are False.
@@ -52,7 +64,7 @@ else:
 # Output: It's a day off!
 ```
 
-### The not Operator: The Reverser
+## The not Operator: The Reverser
 
 - A unary operator (it works on a single condition).
 - It reverses, or negates, the Boolean value.
@@ -77,7 +89,7 @@ if not user_role == "admin":
   # Checking if a user is NOT an admin
 ```
 
-### Building Complex Logic
+## Building Complex Logic
 
 - You can combine **and,** **or**, and **not** to create sophisticated rules.
 - Use parentheses () to group conditions and control the order of evaluation (just like in math!).
@@ -118,7 +130,7 @@ flowchart TD
       ELSE --> E
 ```
 
-### Short-Circuit Evaluation
+## Short-Circuit Evaluation
 
 - Python is smart! It stops evaluating a logical expression as soon as the final outcome is known.
 - and: If the first condition is False, the result is already False. The second condition is not evaluated.
@@ -169,7 +181,7 @@ flowchart TD
 
 ---
 
-### Real-World Example: Secure Login
+## Real-World Example: Secure Login
 
 A practical application combining all three operators for a security check.
 
@@ -232,7 +244,7 @@ flowchart TD
 | True  | False | True   | False | False | True |
 | True  | True  | True   | True  | False | False |
 
-### Summary & Best Practices
+## Summary & Best Practices
 
 - **and:** All conditions must be True.
 - **or:** At least one condition must be True.
