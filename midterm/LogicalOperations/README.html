@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>README.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="making-decisions-smarter-logical-operators-in-python">Making Decisions Smarter: Logical Operators in Python</h1>
+<blockquote>
+<p>Combining Conditions for Complex Logic</p>
+</blockquote>
+<h2 id="the-world-of-true-and-false">The World of True and False</h2>
+<ul>
+<li>Computers make decisions based on Boolean logic:
+<ul>
+<li>expressions that are either True or False.</li>
+</ul>
+</li>
+<li>We've seen this in if statements:
+<ul>
+<li><strong>if condition.</strong></li>
+</ul>
+</li>
+<li>Logical operators allow us to combine these <strong>True/False</strong> values to form more complex conditions.</li>
+<li>They are the <strong>AND</strong>, <strong>OR</strong>, and <strong>NOT</strong> of programming.</li>
+</ul>
+<p>Analogy: &quot;I will go to the park if it is sunny
+<strong>AND</strong> I have free time.&quot;</p>
+<h3 id="the-and-operator-all-must-be-true">The and Operator: All Must Be True</h3>
+<ul>
+<li>Returns True only if both operands (conditions) are True.</li>
+<li>If any condition is False, the entire expression is False.</li>
+<li>Think of it as: <strong>&quot;Are condition A and condition B both true?&quot;</strong></li>
+</ul>
+<p><strong>Code Example:</strong></p>
+<pre class="hljs"><code><div>age = <span class="hljs-number">25</span>
+has_license = <span class="hljs-literal">True</span>
+
+<span class="hljs-keyword">if</span> age &gt;= <span class="hljs-number">18</span> <span class="hljs-keyword">and</span> has_license:
+  print(<span class="hljs-string">"You are allowed to drive."</span>)
+<span class="hljs-keyword">else</span>:
+  print(<span class="hljs-string">"You cannot drive."</span>)
+<span class="hljs-comment"># Output: You are allowed to drive.</span>
+</div></code></pre>
+<h3 id="the-or-operator-at-least-one-must-be-true">The or Operator: At Least One Must Be True</h3>
+<ul>
+<li>Returns True if at least one operand (condition) is True.</li>
+<li>It only returns False if both conditions are False.</li>
+<li>Think of it as: <strong>&quot;Is condition A or condition B true?</strong>&quot;</li>
+</ul>
+<p><strong>Code Example:</strong></p>
+<pre class="hljs"><code><div>day = <span class="hljs-string">"Saturday"</span>
+is_holiday = <span class="hljs-literal">False</span>
+
+<span class="hljs-keyword">if</span> day == <span class="hljs-string">"Saturday"</span> <span class="hljs-keyword">or</span> day == <span class="hljs-string">"Sunday"</span> <span class="hljs-keyword">or</span> is_holiday:
+  print(<span class="hljs-string">"It's a day off!"</span>)
+<span class="hljs-keyword">else</span>:
+  print(<span class="hljs-string">"It's a weekday."</span>)
+<span class="hljs-comment"># Output: It's a day off!</span>
+</div></code></pre>
+<h3 id="the-not-operator-the-reverser">The not Operator: The Reverser</h3>
+<ul>
+<li>A unary operator (it works on a single condition).</li>
+<li>It reverses, or negates, the Boolean value.</li>
+<li>not True is False.</li>
+<li>not False is True.</li>
+<li>Think of it as: <strong>&quot;Is this condition not true?&quot;</strong></li>
+</ul>
+<p><strong>Code Example:</strong></p>
+<pre class="hljs"><code><div>is_raining = <span class="hljs-literal">False</span>
+
+<span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> is_raining:
+  print(<span class="hljs-string">"You don't need an umbrella."</span>)
+<span class="hljs-keyword">else</span>:
+  print(<span class="hljs-string">"Take an umbrella!"</span>)
+  <span class="hljs-comment"># Output: You don't need an umbrella.</span>
+
+user_role = <span class="hljs-string">"guest"</span>
+<span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> user_role == <span class="hljs-string">"admin"</span>:
+  print(<span class="hljs-string">"Access denied."</span>)
+  <span class="hljs-comment"># Checking if a user is NOT an admin</span>
+</div></code></pre>
+<h3 id="building-complex-logic">Building Complex Logic</h3>
+<ul>
+<li>You can combine <strong>and,</strong> <strong>or</strong>, and <strong>not</strong> to create sophisticated rules.</li>
+<li>Use parentheses () to group conditions and control the order of evaluation (just like in math!).</li>
+</ul>
+<p><strong>Code Example:</strong></p>
+<pre class="hljs"><code><div>age = <span class="hljs-number">22</span>
+is_student = <span class="hljs-literal">True</span>
+has_coupon = <span class="hljs-literal">False</span>
+
+<span class="hljs-comment"># Scenario: Discount for students OR anyone with a coupon, but they must be over 18.</span>
+<span class="hljs-keyword">if</span> (is_student <span class="hljs-keyword">or</span> has_coupon) <span class="hljs-keyword">and</span> age &gt;= <span class="hljs-number">18</span>:
+  print(<span class="hljs-string">"You are eligible for a discount!"</span>)
+<span class="hljs-keyword">else</span>:
+  print(<span class="hljs-string">"No discount available."</span>)
+
+<span class="hljs-comment"># How it evaluates:</span>
+<span class="hljs-comment"># 1. (True OR False) -&gt; True</span>
+<span class="hljs-comment"># 2. (True AND True) -&gt; True</span>
+<span class="hljs-comment"># Output: You are eligible for a discount!</span>
+</div></code></pre>
+<p>how it works on flowchart for understanding:</p>
+<pre><code class="language-mermaid"><div class="mermaid">
+flowchart TD
+    A[start] --> VAR[initialize variable, age = 22, is_student = True, has_coupon = False]
+      VAR --> C{"is_student"}
+      C --> |False| D{"has_coupon"}
+      C --> |True| F{"age >= 18"}
+      D --> |True| F
+      F --> |True| RESULT["You are eligible for a discount!"]
+      F ----> |False| ELSE["No discount available."]
+      D ----> |False| ELSE
+      RESULT --> E["Exit"]
+      ELSE --> E
+</div></code></pre>
+<h3 id="short-circuit-evaluation">Short-Circuit Evaluation</h3>
+<ul>
+<li>Python is smart! It stops evaluating a logical expression as soon as the final outcome is known.</li>
+<li>and: If the first condition is False, the result is already False. The second condition is not evaluated.</li>
+<li>or: If the first condition is True, the result is already True. The second condition is not evaluated.</li>
+</ul>
+<p>Why it matters: It can improve performance and prevent errors.</p>
+<p><strong>Code Example:</strong></p>
+<pre class="hljs"><code><div><span class="hljs-comment"># Example 1: With 'and'</span>
+data = [] <span class="hljs-comment"># An empty list</span>
+
+<span class="hljs-comment"># if data is not empty AND the first element is 10</span>
+<span class="hljs-keyword">if</span> len(data) &gt; <span class="hljs-number">0</span> <span class="hljs-keyword">and</span> data[<span class="hljs-number">0</span>] == <span class="hljs-number">10</span>:
+  print(<span class="hljs-string">"Found 10"</span>)
+<span class="hljs-comment"># This is safe! Because data is empty, the first condition (len(data)&gt;0) is False.</span>
+
+<span class="hljs-comment"># Python short-circuits and NEVER tries to evaluate data[0], which would cause an IndexError.</span>
+
+<span class="hljs-comment"># Example 2: With 'or'</span>
+name = <span class="hljs-string">"Alice"</span>
+
+<span class="hljs-comment"># If name is not empty OR we try to get a default value</span>
+greeting = name <span class="hljs-keyword">or</span> <span class="hljs-string">"Guest"</span>
+print(greeting) <span class="hljs-comment"># Output: Alice</span>
+</div></code></pre>
+<p><strong>Flowchart version:</strong></p>
+<pre><code class="language-mermaid"><div class="mermaid">flowchart TD
+    A["Start"] --> List["Initialize list, data = []"]
+    List --> B{"is length of data greater than 0?"}
+    B --> |True| C{"And data[0] == 10?"}
+    C --> |True| D["Found 10"]
+
+    A --> Name["Initialize, name = Alice"]
+    C --> |False| Name
+    B --> |False| Name
+    D --> Name
+
+    Name --> E{"is name empty?"}
+    E --> |True| G["Guest"]
+    E --> |False| F["name"]
+
+</div></code></pre>
+<hr>
+<h3 id="real-world-example-secure-login">Real-World Example: Secure Login</h3>
+<p>A practical application combining all three operators for a security check.</p>
+<p><strong>Code example</strong>:</p>
+<pre class="hljs"><code><div><span class="hljs-comment"># User credentials and status</span>
+username = <span class="hljs-string">"johndoe"</span>
+password = <span class="hljs-string">"secret123"</span>
+is_account_active = <span class="hljs-literal">True</span>
+failed_attempts = <span class="hljs-number">1</span>
+
+<span class="hljs-comment"># Simulate login logic</span>
+input_username = <span class="hljs-string">"johndoe"</span>
+input_password = <span class="hljs-string">"secret123"</span>
+
+<span class="hljs-comment"># Check if login is successful AND account is active AND not too many failed attempts</span>
+<span class="hljs-keyword">if</span> (input_username == username <span class="hljs-keyword">and</span> input_password == password) <span class="hljs-keyword">and</span> is_account_active <span class="hljs-keyword">and</span> <span class="hljs-keyword">not</span> failed_attempts &gt;= <span class="hljs-number">3</span>:
+  print(<span class="hljs-string">"Login successful! Welcome."</span>)
+<span class="hljs-keyword">else</span>:
+  print(<span class="hljs-string">"Login failed. Check credentials, account status, or try again later."</span>)
+<span class="hljs-comment"># Output: Login successful! Welcome.</span>
+</div></code></pre>
+<p><strong>Flowchart</strong>:</p>
+<pre><code class="language-mermaid"><div class="mermaid">flowchart TD
+    start[Start] --> A["initialize variable,
+    username = johndoe,
+    password = secret123,
+    is_account_active = True
+    failed_attempts = 1
+    "]
+
+    A --> Input[
+    input_username,
+    input_password]
+
+    Input --> B{"input_username == username"}
+    B --> |True| C{"input_password == password"}
+    
+    C --> |True| D{"is_active"}
+    D --> |True| E{"failed_attempts >= 3"}
+    E --> |False| F["Login Successful!"]
+    C --> |False| G["Login failed. Check credentials, account status, or try again later."]
+    B --> |false| G
+    D --> |False| G
+    E --> |True| G
+</div></code></pre>
+<hr>
+<p><strong>for easy understanding Refer to the truth table:</strong></p>
+<table>
+<thead>
+<tr>
+<th>A</th>
+<th>B</th>
+<th>A OR B</th>
+<th>A AND B</th>
+<th>NOT A</th>
+<th>NOT B</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr>
+<td>False</td>
+<td>True</td>
+<td>True</td>
+<td>False</td>
+<td>True</td>
+<td>False</td>
+</tr>
+<tr>
+<td>True</td>
+<td>False</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+<td>True</td>
+</tr>
+<tr>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<h3 id="summary--best-practices">Summary &amp; Best Practices</h3>
+<ul>
+<li><strong>and:</strong> All conditions must be True.</li>
+<li><strong>or:</strong> At least one condition must be True.</li>
+<li><strong>not:</strong> Reverses a single Boolean value.</li>
+<li>Use parentheses () to group conditions and make complex logic clear.</li>
+<li>Remember short-circuiting! It can make your code faster and safer.</li>
+<li>When in doubt, refer to the truth tables.</li>
+</ul>
+
+</body>
+</html>
