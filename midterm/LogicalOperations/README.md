@@ -168,7 +168,7 @@ flowchart TD
     B --> |True| C{"And data[0] == 10?"}
     C --> |True| D["Found 10"]
 
-    A --> Name["Initialize, name = Alice"]
+    Name["Initialize, name = Alice"]
     C --> |False| Name
     B --> |False| Name
     D --> Name
